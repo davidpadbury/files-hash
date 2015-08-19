@@ -4,7 +4,8 @@
   "description": "Hash a glob of files",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --compilers js:babel/register --require test/support/node test"
+    "test": "mocha test",
+    "cover": "babel-node `npm bin`/isparta cover --report text --report html `npm bin`/_mocha -- --reporter dot test"
   },
   "keywords": [
     "hash",
@@ -21,6 +22,7 @@
     "babel": "^5.8.21",
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
+    "isparta": "^3.0.3",
     "mocha": "^2.2.5"
   }
 }

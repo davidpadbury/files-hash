@@ -6,3 +6,6 @@ lib
 
 # node modules - npm install instead
 node_modules
+
+# coverage results
+coverage
