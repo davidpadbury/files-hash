@@ -1,0 +1,26 @@
+{
+  "name": "file-hash",
+  "version": "1.0.0",
+  "description": "Hash a glob of files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --compilers js:babel/register --require test/support/node test"
+  },
+  "keywords": [
+    "hash",
+    "cache",
+    "files"
+  ],
+  "author": "David Padbury <david@davidpadbury.com>",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promisify": "^3.0.0",
+    "glob": "^5.0.14"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.2.5"
+  }
+}

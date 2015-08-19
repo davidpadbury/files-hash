@@ -1,0 +1,8 @@
+# vim temp files
+*.swp
+
+# transpiled code
+lib
+
+# node modules - npm install instead
+node_modules
