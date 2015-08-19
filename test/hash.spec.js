@@ -20,4 +20,19 @@ describe('hash', () => {
         });
 
     });
+
+    describe('not specifying working directory', () => {
+    
+        let hashes;
+
+        before(async function() {
+            hashes = await hash('test/**/*.spec.js');
+        });
+
+        it('should use current working directory', () => {
+            // The glob should match this file from the working directory of the root of the project
+            expect(hashes).to.have.keys('test/hash.spec.js');
+        });
+
+    });
 });

@@ -31,7 +31,7 @@ function hashFile(filename) {
     });
 }
 
-export default async function hashFiles(pattern, options) {
+export default async function hashFiles(pattern, options = {}) {
     const result = {};
     const files = await globP(pattern, options);
     const hashPromises = files.map(async function(filename) {
