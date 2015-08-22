@@ -35,4 +35,18 @@ describe('hash', () => {
         });
 
     });
+
+    describe('hashing directory with subdirectory', () => {
+
+        let hashes;
+
+        before(async function() {
+            hashes = await hash('**/*', { cwd: 'test/examples/dirs' });
+        });
+
+        it('should include directory in key', () => {
+            expect(hashes['subdir/hello2.txt']).to.be.sha1digest;
+        });
+
+    });
 });

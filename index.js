@@ -33,7 +33,12 @@ function hashFile(filename) {
 
 export default async function hashFiles(pattern, options = {}) {
     const result = {};
+
+    // force to not list directories
+    options.nodir = true;
+
     const files = await globP(pattern, options);
+
     const hashPromises = files.map(async function(filename) {
         const fullPath = path.resolve(options.cwd || process.cwd(), filename);
         const hash = await hashFile(fullPath);
