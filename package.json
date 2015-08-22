@@ -1,9 +1,11 @@
 {
   "name": "files-hash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hash a glob of files",
   "main": "lib/index.js",
-  "files": [ "lib/" ],
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "test": "mocha test",
     "cover": "babel-node `npm bin`/isparta cover --report text --report html `npm bin`/_mocha -- --reporter dot test",
