@@ -7,7 +7,7 @@ describe('hash', () => {
         let hashes;
 
         before(async function(){
-            hashes = await hash('**/*', { cwd: 'test/example'});
+            hashes = await hash('**/*', { cwd: 'test/examples/simple'});
         });
 
         it('should have a property for each file in glob', () => {
