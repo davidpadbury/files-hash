@@ -1,6 +1,6 @@
 {
   "name": "files-hash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hash a glob of files",
   "main": "lib/index.js",
   "files": [
