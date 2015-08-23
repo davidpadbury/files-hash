@@ -2,7 +2,14 @@ import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
 import promisify from 'es6-promisify';
+import throat from 'throat';
 import glob from 'glob';
+
+/**
+ * How many hashes can be executed at once.
+ * Should be under OS fd limit.
+ */
+const HASH_CONCURRENCY = 10;
 
 /**
  * Promisify glob function
@@ -39,12 +46,13 @@ export default async function hashFiles(pattern, options = {}) {
 
     const files = await globP(pattern, options);
 
-    const hashPromises = files.map(async function(filename) {
+    // use throat to limit concurrency of how many hash functions execute at once
+    const hashPromises = files.map(throat(HASH_CONCURRENCY, async function(filename) {
         const fullPath = path.resolve(options.cwd || process.cwd(), filename);
         const hash = await hashFile(fullPath);
 
         result[filename] =  hash;
-    });
+    }));
 
     await Promise.all(hashPromises);
 

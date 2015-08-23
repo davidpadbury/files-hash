@@ -22,7 +22,8 @@
   "dependencies": {
     "babel-runtime": "^5.8.20",
     "es6-promisify": "^3.0.0",
-    "glob": "^5.0.14"
+    "glob": "^5.0.14",
+    "throat": "^2.0.2"
   },
   "devDependencies": {
     "babel": "^5.8.21",
