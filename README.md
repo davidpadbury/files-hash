@@ -2,6 +2,8 @@
 
 Hash a glob of files. Useful for caching and things.
 
+![Build Status](https://api.travis-ci.org/davidpadbury/files-hash.svg?branch=master)
+
 ## Installation
 
 Install the package with npm.
