@@ -3,6 +3,7 @@
 Hash a glob of files. Useful for caching and things.
 
 ![Build Status](https://api.travis-ci.org/davidpadbury/files-hash.svg?branch=master)
+![Dependency Freshness](https://david-dm.org/davidpadbury/files-hash.svg)
 
 ## Installation
 
